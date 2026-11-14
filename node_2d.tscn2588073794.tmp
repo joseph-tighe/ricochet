@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://brm8ti1a6l5yl"]
+
+[ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://i4g3objw2vr7" path="res://bullet.tscn" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dolidih4wv8d2" path="res://enemy_spawner.gd" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://bcgvioxq6mx0r" path="res://enemy.tscn" id="5_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+size = Vector2(112, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(895, 20)
+
+[node name="Scene" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(238, 202)
+script = ExtResource("1_wtcfe")
+Bullet = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_0e48y")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(532.5, 485)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(533, 483.5)
+scale = Vector2(6.96875, 0.117188)
+texture = ExtResource("2_0e48y")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("4_0hol4")
+Enemy = ExtResource("5_q6r6c")
+
+[node name="EnemyMarker1" type="Marker2D" parent="EnemySpawner"]
+position = Vector2(817, 182)
