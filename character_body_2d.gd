@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @onready var cooldown_timer: Timer = $CooldownTimer
 var can_shoot := true
-@export var health = 100
+@export var health = 20
 
 func _ready() -> void:
 	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
