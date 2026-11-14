@@ -24,6 +24,6 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	var bullet = Bullet.instantiate()
 	get_tree().current_scene.add_child(bullet)
-	bullet.get_child(0).direction = Vector2.LEFT
+	bullet.get_child(0).direction = (get_global_mouse_position()-$Marker2D.global_position).normalized()
 	bullet.global_transform = $Marker2D.global_transform
 	
