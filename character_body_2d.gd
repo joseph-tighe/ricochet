@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @onready var cooldown_timer: Timer = $CooldownTimer
 var can_shoot := true
-@export var health = 200
+@export var health = 20
 
 func _ready() -> void:
 	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		can_shoot = false
 		cooldown_timer.start(0.2) # Cooldown in seconds
 		shoot()
-	print(health)
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
 

@@ -13,7 +13,8 @@ func _physics_process(delta: float) -> void:
 			collider.health -= damage
 			queue_free()
 		elif collider.is_in_group("enemy"):
-			print("Hit enemy")
+			collider.health -= damage
+			queue_free()
 		direction = direction.bounce(collision.get_normal()).normalized()
 		rotateTowards()
 		damage *= 2
