@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://p36u4xvowucm"]
+
+[ext_resource type="Script" uid="uid://dj7e8w0epa2dt" path="res://health.gd" id="1_k3ni6"]
+
+[node name="HealthHUD" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -54.0
+offset_right = -24.0
+offset_bottom = -24.0
+color = Color(0.08, 0.08, 0.08, 0.9)
+
+[node name="HealthFill" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -54.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+color = Color(1, 0, 0, 1)
+script = ExtResource("1_k3ni6")

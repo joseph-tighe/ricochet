@@ -1,24 +1,33 @@
-[gd_scene load_steps=0 format=3 uid="uid://yl6rjet3so5n"]
+[gd_scene load_steps=7 format=3 uid="uid://ccgsa4nkswjt8"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://c5pj1vh036cyl" path="res://UI.gd" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://p36u4xvowucm" path="res://healthBar.tscn" id="5_2hs0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(112, 115)
 
-[node name="Player" type="Node2D" unique_id=1599162917]
+[node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1011545928 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_i3pqv")
 Bullet = ExtResource("2_hqtel")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2132208756]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_2hs0m")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=982401261]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("3_sweqy")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1867864050]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=2147283976]
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_sweqy")
+bar = ExtResource("5_2hs0m")
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(5, -84)
