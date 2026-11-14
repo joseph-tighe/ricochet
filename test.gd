@@ -1,11 +1,12 @@
 # Bullet.gd — attached to the bullet scene's root
 extends CharacterBody2D
 
-@export var speed := 1000.0
+@export var speed := 3000.0
 @export var direction := Vector2.RIGHT
 var damage = 1
 
 func _physics_process(delta: float) -> void:
+	rotateTowards()
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
 		var collider = collision.get_collider()
@@ -16,7 +17,6 @@ func _physics_process(delta: float) -> void:
 			collider.health -= damage
 			queue_free()
 		direction = direction.bounce(collision.get_normal()).normalized()
-		rotateTowards()
 		damage *= 2
 func rotateTowards() -> void:
-	rotate(atan2(direction.y, direction.x));
+	rotate(atan2(direction.y, direction.x)-rotation);
