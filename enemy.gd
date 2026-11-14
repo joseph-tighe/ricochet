@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var cooldown_timer: Timer = $CooldownTimer
 var can_shoot := true
 @export var health = 10
+@export var sight = 1000
 
 func _ready() -> void:
 	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
@@ -25,7 +26,7 @@ func shoot():
 	var player = get_tree().get_first_node_in_group("player")
 	get_tree().current_scene.add_child(bullet)
 	var dirVect: Vector2 = (player.global_position-$EnemyMarker.global_position)
-	if dirVect.length() > 1000:
+	if dirVect.length() > sight:
 		return;
 	dirVect = dirVect.normalized()
 	dirVect += Vector2(randf_range(-0.1, 0.1), randf_range(-0.1, 0.1))
