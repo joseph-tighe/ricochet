@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brm8ti1a6l5yl"]
+[gd_scene format=3 uid="uid://brm8ti1a6l5yl"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="2_0e48y"]
@@ -10,13 +10,18 @@ size = Vector2(112, 115)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(895, 20)
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" unique_id=869258858]
 
+<<<<<<< HEAD
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+=======
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2102234316 groups=["player"]]
+>>>>>>> 41b1414 (peak bullet asset)
 position = Vector2(238, 202)
 script = ExtResource("1_wtcfe")
 Bullet = ExtResource("2_epypp")
 
+<<<<<<< HEAD
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_y32ns")
 
@@ -34,6 +39,25 @@ position = Vector2(532.5, 485)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall"]
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=348054755]
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=600423164]
+texture = ExtResource("2_0e48y")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1905424486]
+
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=1348425814]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=885130426]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1533032233]
+position = Vector2(532.5, 485)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=38214461]
+>>>>>>> 41b1414 (peak bullet asset)
 position = Vector2(533, 483.5)
 scale = Vector2(6.96875, 0.117188)
 texture = ExtResource("2_0e48y")
