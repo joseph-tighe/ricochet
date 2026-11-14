@@ -36,5 +36,6 @@ func shoot():
 	get_tree().current_scene.add_child(bullet)
 	bullet.get_child(0).direction = (get_global_mouse_position()-$Marker2D.global_position).normalized()
 	bullet.global_transform = $Marker2D.global_transform
+	bullet.get_child(0).rotateTowards()
 	bullet.global_position = $Marker2D.global_position \
 		+ 120.0 * (get_global_mouse_position() - $Marker2D.global_position).normalized()	
