@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bg436yo65ywjo" path="res://assets/craftpix-net-749505-free-medieval-fortress-top-down-pixel-minigame-kit/Tileset/Tiled_Map.png" id="1_6mpcb"]
 [ext_resource type="Script" uid="uid://dolidih4wv8d2" path="res://enemy_spawner.gd" id="1_jschv"]
 [ext_resource type="PackedScene" uid="uid://bcgvioxq6mx0r" path="res://enemy.tscn" id="2_okdh5"]
-[ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="3_t6wp4"]
-[ext_resource type="PackedScene" uid="uid://i4g3objw2vr7" path="res://bullet.tscn" id="4_bcbm8"]
-[ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="5_31jyx"]
+[ext_resource type="PackedScene" uid="uid://yl6rjet3so5n" path="res://player.tscn" id="4_okdh5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c55je"]
 
@@ -223,9 +221,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_c55je")
 sources/0 = SubResource("TileSetAtlasSource_6mpcb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1bqk"]
-size = Vector2(112, 115)
-
 [node name="lvl 1" type="Node2D" unique_id=758608488]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1923623061]
@@ -242,17 +237,5 @@ position = Vector2(491, 3)
 [node name="EnemyMarker2" type="Marker2D" parent="EnemySpawner" unique_id=1452678990]
 position = Vector2(-368, -18)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1971263302 groups=["player"]]
-position = Vector2(-130, 184)
-script = ExtResource("3_t6wp4")
-Bullet = ExtResource("4_bcbm8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1730944576]
-shape = SubResource("RectangleShape2D_a1bqk")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=393141305]
-texture = ExtResource("5_31jyx")
-
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=642158621]
-
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=1177360959]
+[node name="Player" parent="." unique_id=1599162917 instance=ExtResource("4_okdh5")]
+position = Vector2(551, 220)

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://yl6rjet3so5n"]
+
+[ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="3_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
+size = Vector2(112, 115)
+
+[node name="Player" type="Node2D" unique_id=1599162917]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1011545928 groups=["player"]]
+script = ExtResource("1_i3pqv")
+Bullet = ExtResource("2_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2132208756]
+shape = SubResource("RectangleShape2D_2hs0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=982401261]
+texture = ExtResource("3_sweqy")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1867864050]
+
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=2147283976]
