@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://drdu42t6gcr5c"]
+[gd_scene load_steps=4 format=3 uid="uid://i4g3objw2vr7"]
 
-[ext_resource type="Script" path="res://test.gd" id="2_2b2rl"]
-[ext_resource type="Texture2D" path="res://Layer 1.png" id="3_t4vbm"]
+[ext_resource type="Script" uid="uid://svahh4dl5eie" path="res://test.gd" id="2_2b2rl"]
+[ext_resource type="Texture2D" uid="uid://c1n5i2sbt8ke4" path="res://Layer 1.png" id="3_t4vbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
 size = Vector2(54, 50)
 
-[node name="@Node2D@11" type="Node2D" unique_id=1010595136]
+[node name="_Node2D_11" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=612888807]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_2b2rl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1264491579]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(3, -5)
 shape = SubResource("RectangleShape2D_2b2rl")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=202154397]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(2, -3)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_t4vbm")

@@ -1,14 +1,13 @@
 extends Node2D
-
 @export var Enemy : PackedScene
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var enemy = Enemy.instantiate()
-	get_tree().current_scene.add_child(enemy)
-	enemy.global_transform = $EnemySpawnerMarker.global_transform
+	spawn()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	pass
+
+func spawn():
+	var enemy = Enemy.instantiate()
+	get_tree().current_scene.add_child.call_deferred(enemy)
+	enemy.global_transform = $EnemyMarker1.global_transform

@@ -19,6 +19,11 @@ run/main_scene="uid://brm8ti1a6l5yl"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+enemy=""
+player=""
+
 [input]
 
 shoot={
