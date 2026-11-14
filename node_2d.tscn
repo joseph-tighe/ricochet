@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://brm8ti1a6l5yl"]
+[gd_scene load_steps=9 format=3 uid="uid://brm8ti1a6l5yl"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_epypp"]
 [ext_resource type="Script" uid="uid://dolidih4wv8d2" path="res://enemy_spawner.gd" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://bcgvioxq6mx0r" path="res://enemy.tscn" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://cnifwgwjt7jgf" path="res://cameraPositioning.gd" id="6_kdubu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(112, 115)
@@ -46,3 +47,7 @@ Enemy = ExtResource("5_q6r6c")
 
 [node name="EnemyMarker1" type="Marker2D" parent="EnemySpawner"]
 position = Vector2(817, 182)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("6_kdubu")
