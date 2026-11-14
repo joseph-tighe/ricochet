@@ -1,0 +1,16 @@
+# Bullet.gd — attached to the bullet scene's root
+extends CharacterBody2D
+
+@export var speed := 1000.0
+@export var direction := Vector2.RIGHT
+
+func _physics_process(delta: float) -> void:
+	var collision = move_and_collide(direction * speed * delta)
+	if collision:
+		var collider = collision.get_collider()
+
+		if collider.is_in_group("player"):
+			queue_free()
+		elif collider.is_in_group("enemy"):
+			print("Hit enemy")
+		direction = direction.bounce(collision.get_normal()).normalized()
