@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyfg8ss5kh5g1"]
+
+[ext_resource type="Script" uid="uid://ub6d2pdfs3lf" path="res://enemy_2.gd" id="1_jugo2"]
+[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_fb6pl"]
+[ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="3_cp8lj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1elri"]
+size = Vector2(128, 130)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy2" type="CharacterBody2D" parent="." groups=["enemy"]]
+script = ExtResource("1_jugo2")
+Bullet = ExtResource("2_fb6pl")
+
+[node name="EnemySprite" type="Sprite2D" parent="Enemy2"]
+position = Vector2(0, -1)
+scale = Vector2(1, 1.01563)
+texture = ExtResource("3_cp8lj")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy2"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_1elri")
+
+[node name="EnemyMarker" type="Marker2D" parent="Enemy2"]
+
+[node name="CooldownTimer" type="Timer" parent="Enemy2"]
