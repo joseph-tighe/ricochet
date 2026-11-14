@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=9 format=3 uid="uid://brm8ti1a6l5yl"]
+=======
+[gd_scene format=3 uid="uid://brm8ti1a6l5yl"]
+>>>>>>> a8de483 (lvl 1)
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="2_0e48y"]
@@ -13,41 +17,46 @@ size = Vector2(112, 115)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(895, 20)
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" unique_id=1057397478]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1012769175 groups=["player"]]
 position = Vector2(238, 202)
 script = ExtResource("1_wtcfe")
 Bullet = ExtResource("2_epypp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1934823344]
 shape = SubResource("RectangleShape2D_y32ns")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2069548233]
 texture = ExtResource("2_0e48y")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1716626817]
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=1055137883]
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=2082479610]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1610190978]
 position = Vector2(532.5, 485)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=1305932756]
 position = Vector2(533, 483.5)
 scale = Vector2(6.96875, 0.117188)
 texture = ExtResource("2_0e48y")
 
-[node name="EnemySpawner" type="Node2D" parent="."]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=316367340]
 script = ExtResource("4_0hol4")
 Enemy = ExtResource("5_q6r6c")
 
-[node name="EnemyMarker1" type="Marker2D" parent="EnemySpawner"]
+[node name="EnemyMarker1" type="Marker2D" parent="EnemySpawner" unique_id=242582592]
 position = Vector2(817, 182)
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 script = ExtResource("6_kdubu")
+=======
+[node name="EnemyMarker2" type="Marker2D" parent="EnemySpawner" unique_id=1659770872]
+position = Vector2(655, 251)
+>>>>>>> a8de483 (lvl 1)
