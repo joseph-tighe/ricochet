@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		can_shoot = false
 		cooldown_timer.start(0.2) # Cooldown in seconds
 		shoot()
-	print(health)
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="2_0e48y"]
-[ext_resource type="PackedScene" uid="uid://yicq3lhidg2w" path="res://bullet.tscn" id="2_epypp"]
+[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_epypp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(112, 115)
@@ -12,28 +12,28 @@ size = Vector2(895, 20)
 
 [node name="Scene" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(238, 202)
 script = ExtResource("1_wtcfe")
 Bullet = ExtResource("2_epypp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_y32ns")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_0e48y")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+[node name="PlayerMarker" type="Marker2D" parent="Player"]
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+[node name="CooldownTimer" type="Timer" parent="Player"]
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="Wall" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(532.5, 485)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
 position = Vector2(533, 483.5)
 scale = Vector2(6.96875, 0.117188)
 texture = ExtResource("2_0e48y")
