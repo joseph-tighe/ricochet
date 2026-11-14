@@ -24,8 +24,10 @@ func shoot():
 	var bullet = Bullet.instantiate()
 	var player = get_tree().get_first_node_in_group("player")
 	get_tree().current_scene.add_child(bullet)
-	bullet.get_child(0).direction = (player.global_position-$EnemyMarker.global_position).normalized()
+	var dirVect = (player.global_position-$EnemyMarker.global_position).normalized()
+	dirVect += Vector2(randf_range(-0.1, 0.1), randf_range(-0.1, 0.1))
+	bullet.get_child(0).direction = dirVect
 	bullet.global_transform = $EnemyMarker.global_transform
 	bullet.get_child(0).rotateTowards()
 	bullet.global_position = $EnemyMarker.global_position \
-		+ 120.0 * (player.global_position - $EnemyMarker.global_position).normalized()	
+		+ 120.0 * dirVect	
