@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://dx34ov7fiartw"]
 
 [ext_resource type="Texture2D" uid="uid://bg436yo65ywjo" path="res://assets/craftpix-net-749505-free-medieval-fortress-top-down-pixel-minigame-kit/Tileset/Tiled_Map.png" id="1_6mpcb"]
+[ext_resource type="Texture2D" uid="uid://dv8u81jvg2p05" path="res://assets/craftpix-net-558275-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png" id="1_31jyx"]
 [ext_resource type="Script" uid="uid://dolidih4wv8d2" path="res://enemy_spawner.gd" id="1_jschv"]
+[ext_resource type="Texture2D" uid="uid://bgt540tcwgbyg" path="res://assets/craftpix-net-558275-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/2.png" id="2_a1bqk"]
 [ext_resource type="PackedScene" uid="uid://bcgvioxq6mx0r" path="res://enemy.tscn" id="2_okdh5"]
+[ext_resource type="Texture2D" uid="uid://dvymjbffjao4q" path="res://assets/craftpix-net-558275-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="3_4snel"]
+[ext_resource type="Texture2D" uid="uid://bw1bkjpq32r8q" path="res://assets/craftpix-net-558275-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png" id="4_g81ij"]
 [ext_resource type="PackedScene" uid="uid://ccgsa4nkswjt8" path="res://player.tscn" id="4_okdh5"]
-[ext_resource type="Script" uid="uid://cnifwgwjt7jgf" path="res://cameraPositioning.gd" id="5_clg6b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c55je"]
 
@@ -403,6 +406,46 @@ sources/0 = SubResource("TileSetAtlasSource_clg6b")
 
 [node name="lvl 1" type="Node2D" unique_id=2046690931]
 position = Vector2(6, 0)
+
+[node name="Control" type="Control" parent="." unique_id=653172225]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -466.0
+offset_top = -564.0
+offset_right = -426.0
+offset_bottom = -524.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=18057342]
+layout_mode = 0
+offset_left = -4885.0
+offset_top = -2613.0
+offset_right = 3117.0
+offset_bottom = 1375.0
+texture = ExtResource("1_31jyx")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1714179688]
+layout_mode = 0
+offset_left = -4876.0
+offset_top = -2611.0
+offset_right = 3124.0
+offset_bottom = 1364.0
+texture = ExtResource("2_a1bqk")
+
+[node name="TextureRect3" type="TextureRect" parent="Control" unique_id=394602392]
+layout_mode = 0
+offset_left = -4897.0
+offset_top = -2579.0
+offset_right = 3095.0
+offset_bottom = 1372.0
+texture = ExtResource("3_4snel")
+
+[node name="TextureRect4" type="TextureRect" parent="Control" unique_id=672172401]
+layout_mode = 0
+offset_left = -4876.0
+offset_top = -2665.0
+offset_right = 3122.0
+offset_bottom = 1332.0
+texture = ExtResource("4_g81ij")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2085032969]
 position = Vector2(-1359, -755)
