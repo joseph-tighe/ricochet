@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://jnwi50y7j6x7"]
+[gd_scene load_steps=2 format=3 uid="uid://bjac6xnubwfgy"]
 
-[ext_resource type="Script" uid="uid://cwcdqnvm2lete" path="res://multiplayer_ui.gd" id="1_hud"]
+[ext_resource type="Script" path="res://multiplayer_ui.gd" id="1_hud"]
 
 [node name="RoomHud" type="CanvasLayer"]
 script = ExtResource("1_hud")
