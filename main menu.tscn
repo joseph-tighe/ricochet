@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bvbpsre7fqsqw"]
+
+[ext_resource type="Texture2D" uid="uid://bf5kjoqktnudq" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Main_menu.png" id="1_7mewq"]
+[ext_resource type="Texture2D" uid="uid://d0sdpl04qaq3t" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Main_tiles.png" id="2_bajiw"]
+[ext_resource type="Texture2D" uid="uid://bjrn52160ixuk" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons.png" id="3_f0j1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mewq"]
+atlas = ExtResource("1_7mewq")
+region = Rect2(96, 4, 80, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bjpr"]
+atlas = ExtResource("2_bajiw")
+region = Rect2(299, 155, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp6pr"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(93, 323, 56, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c55je"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(173, 338, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih3fs"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(253, 339, 56, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqxn8"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(93, 403, 56, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfpy3"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(173, 418, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oq62"]
+atlas = ExtResource("3_f0j1r")
+region = Rect2(253, 419, 56, 11)
+
+[node name="Control" type="Control" unique_id=1795090972]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="colorbackground" type="ColorRect" parent="." unique_id=220561010]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98300004
+offset_right = 14.0
+offset_bottom = 0.015991211
+color = Color(0.6569714, 0.4027607, 0.25023437, 1)
+metadata/_edit_lock_ = true
+
+[node name="background" type="TextureRect" parent="." unique_id=1664863461]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.999999
+offset_right = 127.765724
+offset_bottom = 177.0
+scale = Vector2(9.348307, 3.7313492)
+texture = SubResource("AtlasTexture_7mewq")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="titlebackground" type="TextureRect" parent="." unique_id=2089280092]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 63.0
+offset_right = 700.0
+offset_bottom = 137.0
+texture = SubResource("AtlasTexture_3bjpr")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="title" type="Label" parent="." unique_id=974305848]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 63.0
+offset_right = 957.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 46
+text = "Ricochet"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="level" type="TextureButton" parent="." unique_id=1030777763]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19100001
+anchor_bottom = 0.18900001
+offset_left = 321.0
+offset_top = 211.0
+offset_right = 620.968
+offset_bottom = 171.52798
+texture_normal = SubResource("AtlasTexture_fp6pr")
+texture_pressed = SubResource("AtlasTexture_c55je")
+texture_hover = SubResource("AtlasTexture_ih3fs")
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1487879310]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.14600001
+anchor_bottom = 0.23
+offset_left = 328.0
+offset_top = 340.0
+offset_right = 660.808
+offset_bottom = 269.96
+texture_normal = SubResource("AtlasTexture_qqxn8")
+texture_pressed = SubResource("AtlasTexture_nfpy3")
+texture_hover = SubResource("AtlasTexture_2oq62")
+stretch_mode = 0
