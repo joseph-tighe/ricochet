@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed := 3000.0
 @export var direction := Vector2.RIGHT
 @export var dmgLimit = 1025
-@export var lifetime := 6.0
+@export var lifetime := 100
 var damage = 1
 
 func _physics_process(delta: float) -> void:
