@@ -61,6 +61,16 @@ func leave_room() -> void:
 	_clear_peer()
 	get_tree().change_scene_to_file(MENU_SCENE)
 
+# Best guess at the address other machines on the network should connect to.
+func get_local_ip() -> String:
+	for address in IP.get_local_addresses():
+		if address.contains(":"):
+			continue # IPv6
+		if address.begins_with("127.") or address.begins_with("169.254."):
+			continue
+		return address
+	return "127.0.0.1"
+
 func _clear_peer() -> void:
 	if peer != null:
 		peer.close()

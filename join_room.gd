@@ -8,6 +8,9 @@ extends Control
 @onready var create_button: Button = %CreateInstead
 @onready var back_button: Button = %BackButton
 
+var _connecting_since := -1
+var _slow_hint_shown := false
+
 func _ready() -> void:
 	join_button.pressed.connect(_on_join_pressed)
 	create_button.pressed.connect(_on_create_pressed)
@@ -15,6 +18,13 @@ func _ready() -> void:
 	MultiplayerHandler.connection_failed.connect(_on_connection_failed)
 	status_label.text = ""
 	username_field.grab_focus()
+
+func _process(_delta: float) -> void:
+	if _connecting_since < 0 or _slow_hint_shown:
+		return
+	if Time.get_ticks_msec() - _connecting_since > 10000:
+		_slow_hint_shown = true
+		status_label.text = "Still connecting...\nCheck that:\n- the host is still on the Create Room screen (or in game),\n- you typed the host's IP (not 127.0.0.1),\n- the host allowed the game through Windows Firewall (UDP),\n- both computers are on the same network."
 
 func _on_join_pressed() -> void:
 	var player_name := username_field.text.strip_edges()
@@ -39,10 +49,13 @@ func _on_join_pressed() -> void:
 
 	join_button.disabled = true
 	status_label.text = "Connecting to %s on port %d..." % [address, port]
+	_connecting_since = Time.get_ticks_msec()
+	_slow_hint_shown = false
 
 func _on_connection_failed() -> void:
+	_connecting_since = -1
 	join_button.disabled = false
-	_show_error("Could not reach the room. Check the address and port.")
+	_show_error("Could not reach the room. Check the address, port and the host's firewall.")
 
 func _on_create_pressed() -> void:
 	get_tree().change_scene_to_file("res://create_room.tscn")

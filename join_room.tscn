@@ -51,13 +51,18 @@ max_length = 20
 
 [node name="AddressLabel" type="Label" parent="Center/VBox"]
 layout_mode = 2
-text = "Host address"
+text = "Host address (use the host's IP, e.g. 192.168.1.20)"
 
 [node name="Address" type="LineEdit" parent="Center/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "127.0.0.1"
 placeholder_text = "127.0.0.1"
+
+[node name="AddressHint" type="Label" parent="Center/VBox"]
+layout_mode = 2
+autowrap_mode = 3
+text = "Both computers must be on the same network. 127.0.0.1 only works on the host's own computer."
 
 [node name="PortLabel" type="Label" parent="Center/VBox"]
 layout_mode = 2
