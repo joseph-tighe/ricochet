@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://ccgsa4nkswjt8"]
+[gd_scene load_steps=12 format=3 uid="uid://ccgsa4nkswjt8"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
-[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://bh6a0ri8vwx1t" path="res://assets/craftpix-net-942642-free-urban-shooter-top-down-pixel-art-mini-game-kit/Characters/Character_3/Idle.png" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://c5pj1vh036cyl" path="res://UI.gd" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://p36u4xvowucm" path="res://healthBar.tscn" id="5_2hs0m"]
@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b26j0")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -45,30 +45,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(32, 42.75)
 
-[node name="Player" type="Node2D" unique_id=574943357]
+[node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1079611102 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_i3pqv")
 Bullet = ExtResource("2_hqtel")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=694222275]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -15)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_xq0jv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5115314
+frame_progress = 0.511531
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=260321108]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1489371401]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=89005738]
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1777815804]
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("4_sweqy")
 bar = ExtResource("5_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1062364262]
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(5, -84)
