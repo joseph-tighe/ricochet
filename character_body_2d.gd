@@ -32,6 +32,12 @@ func _draw() -> void:
 		for i in range(10):
 			draw_circle(segment[0].lerp(segment[1], i/10.0), 3, Color.WHITE)
 func _physics_process(delta: float) -> void:
+	if health < 0:
+		get_tree().change_scene_to_file("res://deathscreen.tscn")
+		return;
+	elif get_tree().get_nodes_in_group("enemy").is_empty():
+		get_tree().change_scene_to_file("res://winscreen.tscn")
+		return;
 	var bulletDir = (get_global_mouse_position()-$Marker2D.global_position).normalized()
 	segments = []
 	var start = $Marker2D.global_position
