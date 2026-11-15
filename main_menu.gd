@@ -3,11 +3,13 @@ extends Control
 @onready var play_button: TextureButton = $level
 @onready var multiplayer_button: TextureButton = $Multiplayer
 @onready var quit_button: TextureButton = $Quit
+@onready var bc_button: TextureButton = $back
 
 func _ready() -> void:
 	play_button.pressed.connect(_on_level_pressed)
 	multiplayer_button.pressed.connect(_on_multiplayer_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
+	bc_button.pressed.connect(_on_bc_pressed)
 
 func _on_level_pressed() -> void:
 	play_button.disabled = true
@@ -18,5 +20,9 @@ func _on_multiplayer_pressed() -> void:
 	get_tree().change_scene_to_file("res://create_room.tscn")
 
 func _on_quit_pressed() -> void:
+	quit_button.disabled = true
+	get_tree().quit()
+	
+func _on_bc_pressed() -> void:
 	quit_button.disabled = true
 	get_tree().quit()

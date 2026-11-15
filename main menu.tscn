@@ -165,3 +165,10 @@ stretch_mode = 0
 stream = ExtResource("4_qqwyt")
 volume_db = 8.82
 autoplay = true
+
+[node name="back" type="TextureButton" parent="." unique_id=620784746]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 13.0
+offset_right = 921.0
+offset_bottom = 53.0
