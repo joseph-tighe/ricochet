@@ -490,7 +490,22 @@ position = Vector2(-936, -727)
 position = Vector2(1065, -1284)
 
 [node name="EnemyMarker11" type="Marker2D" parent="EnemySpawner" unique_id=47474962]
-position = Vector2(1843, -456)
+position = Vector2(2387, -361)
+
+[node name="EnemyMarker12" type="Marker2D" parent="EnemySpawner" unique_id=1142251725]
+position = Vector2(2204, -1161)
+
+[node name="EnemyMarker13" type="Marker2D" parent="EnemySpawner" unique_id=1645358191]
+position = Vector2(1306, -1090)
+
+[node name="EnemyMarker14" type="Marker2D" parent="EnemySpawner" unique_id=814329953]
+position = Vector2(1465, -815)
+
+[node name="EnemyMarker15" type="Marker2D" parent="EnemySpawner" unique_id=864401992]
+position = Vector2(929, -941)
+
+[node name="EnemyMarker16" type="Marker2D" parent="EnemySpawner" unique_id=2037939970]
+position = Vector2(200, -849)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=608379925]
 position = Vector2(-397.00003, -142.00002)
