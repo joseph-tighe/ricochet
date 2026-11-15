@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://create_room.gd" id="1_create"]
+
+[node name="CreateRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_create")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.121569, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Create Room"
+horizontal_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Username"
+
+[node name="Username" type="LineEdit" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Enter your username"
+max_length = 20
+
+[node name="PortLabel" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Room port (the other player needs this)"
+
+[node name="Port" type="LineEdit" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "42069"
+placeholder_text = "42069"
+
+[node name="PlayersLabel" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Max players (including you)"
+
+[node name="MaxPlayers" type="SpinBox" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 2.0
+max_value = 8.0
+value = 2.0
+
+[node name="CreateButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Create Room"
+
+[node name="JoinInstead" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Join a room instead"
+
+[node name="Status" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+text = ""
+
+[node name="BackButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"

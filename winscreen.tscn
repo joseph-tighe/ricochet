@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://i6q6j4r7crhx"]
 
 [ext_resource type="Texture2D" uid="uid://d32w1kiwne4uw" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Win_loose.png" id="1_h3yos"]
+[ext_resource type="Script" uid="uid://bdgq6eoject1m" path="res://winscreen.gd" id="1_pd04t"]
 [ext_resource type="Texture2D" uid="uid://bjrn52160ixuk" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons.png" id="2_ehxyi"]
+[ext_resource type="AudioStream" uid="uid://by7mw731as0da" path="res://assets/music/kulakovka-epic-medieval-614879.mp3" id="3_ehxyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pd04t"]
 atlas = ExtResource("1_h3yos")
@@ -26,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pd04t")
 
 [node name="colorbackground" type="ColorRect" parent="." unique_id=699575028]
 layout_mode = 1
@@ -45,7 +48,7 @@ texture = SubResource("AtlasTexture_pd04t")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1225405064]
+[node name="level" type="TextureButton" parent="." unique_id=1225405064]
 layout_mode = 0
 offset_left = 371.0
 offset_top = 454.0
@@ -55,3 +58,7 @@ texture_normal = SubResource("AtlasTexture_2gb7w")
 texture_pressed = SubResource("AtlasTexture_dvt3n")
 texture_hover = SubResource("AtlasTexture_nah7l")
 stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1853393691]
+stream = ExtResource("3_ehxyi")
+autoplay = true
