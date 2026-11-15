@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5iojywq3i6ft"]
 
-[ext_resource type="Script" path="res://join_room.gd" id="1_join"]
+[ext_resource type="Script" uid="uid://cgodj0ld0wrla" path="res://join_room.gd" id="1_join"]
 
 [node name="JoinRoom" type="Control"]
 layout_mode = 3
@@ -61,8 +61,8 @@ placeholder_text = "127.0.0.1"
 
 [node name="AddressHint" type="Label" parent="Center/VBox"]
 layout_mode = 2
-autowrap_mode = 3
 text = "Both computers must be on the same network. 127.0.0.1 only works on the host's own computer."
+autowrap_mode = 3
 
 [node name="PortLabel" type="Label" parent="Center/VBox"]
 layout_mode = 2
