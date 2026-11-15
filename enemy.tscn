@@ -44,5 +44,5 @@ volume_db = 24.0
 
 [node name="hit" type="AudioStreamPlayer2D" parent="Enemy" unique_id=717373917]
 stream = ExtResource("7_wujgv")
-volume_db = 24.0
+volume_db = -12.0
 max_distance = 4096.0
