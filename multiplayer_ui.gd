@@ -14,9 +14,12 @@ func _ready() -> void:
 		# Prefer the address actually connected to (resolves hostnames too).
 		var enet := multiplayer.multiplayer_peer as ENetMultiplayerPeer
 		if enet != null:
-			var connected_ip: String = enet.get_peer_address(1)
-			if not connected_ip.is_empty():
-				room_ip = connected_ip
+			# Peer 1 is the server; ENetPacketPeer holds the remote address.
+			var server_peer := enet.get_peer(1)
+			if server_peer != null:
+				var connected_ip := server_peer.get_remote_address()
+				if not connected_ip.is_empty():
+					room_ip = connected_ip
 
 	var role := "Host" if MultiplayerHandler.is_host else "Client"
 	$Info.text = "Player: %s   |   %s   |   Room: %s:%d" % [

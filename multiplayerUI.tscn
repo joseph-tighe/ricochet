@@ -1,12 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://jnwi50y7j6x7"]
 
-[ext_resource type="Script" path="res://multiplayer_ui.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://cwcdqnvm2lete" path="res://multiplayer_ui.gd" id="1_hud"]
 
 [node name="RoomHud" type="CanvasLayer"]
 script = ExtResource("1_hud")
 
 [node name="Info" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 16.0
@@ -20,7 +19,6 @@ theme_override_font_sizes/font_size = 18
 vertical_alignment = 1
 
 [node name="Leave" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
