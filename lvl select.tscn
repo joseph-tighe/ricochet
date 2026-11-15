@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://bumoue3uyhlax"]
+
+[ext_resource type="Texture2D" uid="uid://cs3ll40wnl58b" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Levels.png" id="1_rve1e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoxnr"]
+atlas = ExtResource("1_rve1e")
+region = Rect2(135, 0, 114, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5mru"]
+atlas = ExtResource("1_rve1e")
+region = Rect2(211, 193, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bjpr"]
+atlas = ExtResource("1_rve1e")
+region = Rect2(88, 162, 17, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp6pr"]
+atlas = ExtResource("1_rve1e")
+region = Rect2(56, 162, 17, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c55je"]
+atlas = ExtResource("1_rve1e")
+region = Rect2(264, 162, 17, 26)
+
+[node name="Control" type="Control" unique_id=22760342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="colorbackground" type="ColorRect" parent="." unique_id=1361249091]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98300004
+offset_right = 14.0
+offset_bottom = 0.015991211
+color = Color(0.6569714, 0.4027607, 0.25023437, 1)
+metadata/_edit_lock_ = true
+
+[node name="locks" type="Control" parent="." unique_id=1988218717]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="locks" unique_id=2031977494]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 642.0
+texture = SubResource("AtlasTexture_yoxnr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="locks" unique_id=1252602292]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 411.0
+offset_right = 470.0
+offset_bottom = 502.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureRect7" type="TextureRect" parent="locks" unique_id=1033580256]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 407.0
+offset_right = 777.0
+offset_bottom = 498.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureRect6" type="TextureRect" parent="locks" unique_id=660706457]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 259.0
+offset_right = 779.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureRect5" type="TextureRect" parent="locks" unique_id=32723388]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 409.0
+offset_right = 620.0
+offset_bottom = 500.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureRect3" type="TextureRect" parent="locks" unique_id=429364590]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 259.0
+offset_right = 627.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureRect2" type="TextureRect" parent="locks" unique_id=1090745136]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 259.0
+offset_right = 464.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_c5mru")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1576723713]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.106000006
+anchor_bottom = 0.062000003
+offset_left = 379.0
+offset_top = 105.0
+offset_right = 343.888
+offset_bottom = 143.824
+texture_normal = SubResource("AtlasTexture_3bjpr")
+texture_pressed = SubResource("AtlasTexture_fp6pr")
+texture_hover = SubResource("AtlasTexture_c55je")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1836834926]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.106000006
+anchor_bottom = 0.062000003
+offset_left = 535.0
+offset_top = 99.0
+offset_right = 499.888
+offset_bottom = 137.824
+texture_normal = SubResource("AtlasTexture_3bjpr")
+texture_pressed = SubResource("AtlasTexture_fp6pr")
+texture_hover = SubResource("AtlasTexture_c55je")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=1948683172]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.106000006
+anchor_bottom = 0.062000003
+offset_left = 691.0
+offset_top = 101.0
+offset_right = 655.888
+offset_bottom = 139.824
+texture_normal = SubResource("AtlasTexture_3bjpr")
+texture_pressed = SubResource("AtlasTexture_fp6pr")
+texture_hover = SubResource("AtlasTexture_c55je")
+stretch_mode = 0

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cgphw807fcuo7"]
+
+[ext_resource type="Texture2D" uid="uid://d32w1kiwne4uw" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Win_loose.png" id="1_5mq0c"]
+[ext_resource type="Texture2D" uid="uid://bjrn52160ixuk" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons.png" id="2_0ajwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnnxq"]
+atlas = ExtResource("1_5mq0c")
+region = Rect2(347, 203, 90, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoxnr"]
+atlas = ExtResource("2_0ajwu")
+region = Rect2(93, 291, 56, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5mru"]
+atlas = ExtResource("2_0ajwu")
+region = Rect2(173, 306, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bjpr"]
+atlas = ExtResource("2_0ajwu")
+region = Rect2(253, 307, 56, 11)
+
+[node name="Control" type="Control" unique_id=143929087]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="colorbackground" type="ColorRect" parent="." unique_id=1058910527]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98300004
+offset_right = 14.0
+offset_bottom = 0.015991211
+color = Color(0.6569714, 0.4027607, 0.25023437, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=94962095]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 642.0
+texture = SubResource("AtlasTexture_tnnxq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=266693583]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 454.0
+offset_right = 813.0
+offset_bottom = 539.0
+texture_normal = SubResource("AtlasTexture_yoxnr")
+texture_pressed = SubResource("AtlasTexture_c5mru")
+texture_hover = SubResource("AtlasTexture_3bjpr")
+stretch_mode = 0
