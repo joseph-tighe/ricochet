@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bcgvioxq6mx0r"]
+[gd_scene load_steps=12 format=3 uid="uid://bcgvioxq6mx0r"]
 
 [ext_resource type="Script" uid="uid://dcnoxmpruwlrk" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_qi2p4"]
+[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://v6yancqi26rt" path="res://assets/turret/turret-sprites-head-shot-idle.png" id="3_epg4t"]
 [ext_resource type="Texture2D" uid="uid://b0dow4ekvided" path="res://assets/turret/turret-sprites-head-shot.png" id="4_3yqyl"]
 [ext_resource type="Texture2D" uid="uid://bcpsrbjqiymks" path="res://assets/turret/turret-sprites-body.png" id="5_wujgv"]
@@ -31,7 +31,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hb8ge")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -45,35 +45,37 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pwjut")
 }],
-"loop": 1,
+"loop": true,
 "name": &"shoot",
 "speed": 20.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1689262075]
+[node name="Node2D" type="Node2D"]
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=839582995 groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
 script = ExtResource("1_4gyqm")
 Bullet = ExtResource("2_qi2p4")
 
-[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy" unique_id=1321819664]
-position = Vector2(-0.99999714, 11)
-scale = Vector2(1.0430862, 0.9825215)
+[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-0.999997, 11)
+scale = Vector2(1.04309, 0.982521)
 shape = SubResource("RectangleShape2D_4gyqm")
 
-[node name="EnemyMarker" type="Marker2D" parent="Enemy" unique_id=2067883328]
+[node name="EnemyMarker" type="Marker2D" parent="Enemy"]
 
-[node name="CooldownTimer" type="Timer" parent="Enemy" unique_id=299863768]
+[node name="CooldownTimer" type="Timer" parent="Enemy"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=1667077639]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+texture_filter = 1
 position = Vector2(1, -10)
 scale = Vector2(1.76, 1.76)
 sprite_frames = SubResource("SpriteFrames_x2bv2")
 animation = &"shoot"
-frame_progress = 0.1944444
+frame_progress = 0.194444
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=688103572]
-position = Vector2(2.5200005, 10.360001)
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture_filter = 1
+position = Vector2(2.52, 10.36)
 scale = Vector2(1.76, 1.76)
 texture = ExtResource("5_wujgv")
 hframes = 2

@@ -50,4 +50,4 @@ func shoot():
 	bullet.global_transform = $Marker2D.global_transform
 	bullet.get_child(0).rotateTowards()
 	bullet.global_position = $Marker2D.global_position \
-		+ 120.0 * (get_global_mouse_position() - $Marker2D.global_position).normalized()	
+		+ 70.0 * (get_global_mouse_position() - $Marker2D.global_position).normalized()	
