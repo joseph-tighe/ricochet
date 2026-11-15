@@ -11,12 +11,11 @@ anchor_right = 1.0
 offset_left = 16.0
 offset_top = 10.0
 offset_right = -170.0
-offset_bottom = 44.0
+offset_bottom = 84.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 18
-vertical_alignment = 1
 
 [node name="Leave" type="Button" parent="."]
 anchors_preset = 1
