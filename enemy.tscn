@@ -1,63 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bcgvioxq6mx0r"]
 
 [ext_resource type="Script" uid="uid://dcnoxmpruwlrk" path="res://enemy.gd" id="1_4gyqm"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_qi2p4"]
-[ext_resource type="Texture2D" uid="uid://v6yancqi26rt" path="res://assets/turret/turret-sprites-head-shot-idle.png" id="3_epg4t"]
-[ext_resource type="Texture2D" uid="uid://b0dow4ekvided" path="res://assets/turret/turret-sprites-head-shot.png" id="4_3yqyl"]
-[ext_resource type="Texture2D" uid="uid://bcpsrbjqiymks" path="res://assets/turret/turret-sprites-body.png" id="5_wujgv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(61, 57)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hb8ge"]
-atlas = ExtResource("3_epg4t")
-region = Rect2(0, 0, 54, 23)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1ltt"]
-atlas = ExtResource("4_3yqyl")
-region = Rect2(0, 0, 54, 23)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxifv"]
-atlas = ExtResource("4_3yqyl")
-region = Rect2(54, 0, 54, 23)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pwjut"]
-atlas = ExtResource("4_3yqyl")
-region = Rect2(108, 0, 54, 23)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x2bv2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hb8ge")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1ltt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dxifv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pwjut")
-}],
-"loop": true,
-"name": &"shoot",
-"speed": 20.0
-}]
-=======
 [ext_resource type="PackedScene" path="res://bullet.tscn" id="2_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://2ihfwrf8xemy" path="res://turret.png" id="3_iifgy"]
 [ext_resource type="Texture2D" uid="uid://sdvemjyu76k4" path="res://turret-cannon.png" id="4_epg4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(46.262398, 49.87358)
->>>>>>> ba25008 (added functional turret)
 
 [node name="Node2D" type="Node2D"]
 
@@ -65,37 +15,15 @@ size = Vector2(46.262398, 49.87358)
 script = ExtResource("1_4gyqm")
 Bullet = ExtResource("2_qi2p4")
 
-<<<<<<< HEAD
-[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(-0.999997, 11)
-scale = Vector2(1.04309, 0.982521)
-=======
 [node name="EnemyCollision" type="CollisionShape2D" parent="Enemy" unique_id=1321819664]
 position = Vector2(-1.6566999, -1)
 scale = Vector2(0.87947446, 0.79135585)
->>>>>>> ba25008 (added functional turret)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="EnemyMarker" type="Marker2D" parent="Enemy"]
 
 [node name="CooldownTimer" type="Timer" parent="Enemy"]
 
-<<<<<<< HEAD
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-texture_filter = 1
-position = Vector2(1, -10)
-scale = Vector2(1.76, 1.76)
-sprite_frames = SubResource("SpriteFrames_x2bv2")
-animation = &"shoot"
-frame_progress = 0.194444
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture_filter = 1
-position = Vector2(2.52, 10.36)
-scale = Vector2(1.76, 1.76)
-texture = ExtResource("5_wujgv")
-hframes = 2
-=======
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=688103572]
 scale = Vector2(0.58544, 0.58544)
 texture = ExtResource("3_iifgy")
@@ -103,4 +31,3 @@ texture = ExtResource("3_iifgy")
 [node name="Cannon" type="Sprite2D" parent="Enemy" unique_id=634869602]
 scale = Vector2(0.55454737, 0.55454737)
 texture = ExtResource("4_epg4t")
->>>>>>> ba25008 (added functional turret)
