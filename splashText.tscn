@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cry4po262qvgu"]
+
+[ext_resource type="Script" path="res://splash_text.gd" id="1_n0s04"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0s04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 306.0
+offset_right = 1100.0
+offset_bottom = 648.0
+rotation = -0.28088
+theme_override_colors/default_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 52
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 1190.0
+offset_bottom = 352.0
+rotation = 0.289386
+theme_override_colors/default_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 52
+horizontal_alignment = 1
+vertical_alignment = 1

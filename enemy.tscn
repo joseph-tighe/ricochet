@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcgvioxq6mx0r"]
+[gd_scene load_steps=5 format=3 uid="uid://bcgvioxq6mx0r"]
 
 [ext_resource type="Script" uid="uid://dcnoxmpruwlrk" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://c01cmjanjkj66" path="res://icon.svg" id="1_7k104"]
@@ -7,20 +7,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(128, 130)
 
-[node name="Node2D" type="Node2D" unique_id=1470341117]
+[node name="Node2D" type="Node2D"]
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=780776380 groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
 script = ExtResource("1_4gyqm")
 Bullet = ExtResource("2_qi2p4")
 
-[node name="EnemySprite" type="Sprite2D" parent="Enemy" unique_id=1808772181]
+[node name="EnemySprite" type="Sprite2D" parent="Enemy"]
 position = Vector2(0, -1)
 texture = ExtResource("1_7k104")
 
-[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy" unique_id=103700708]
+[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_4gyqm")
 
-[node name="EnemyMarker" type="Marker2D" parent="Enemy" unique_id=1529217926]
+[node name="EnemyMarker" type="Marker2D" parent="Enemy"]
 
-[node name="CooldownTimer" type="Timer" parent="Enemy" unique_id=1221898322]
+[node name="CooldownTimer" type="Timer" parent="Enemy"]

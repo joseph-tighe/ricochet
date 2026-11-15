@@ -17,6 +17,9 @@ func _physics_process(delta: float) -> void:
 			collider.health -= damage
 			queue_free()
 		direction = direction.bounce(collision.get_normal()).normalized()
-		damage *= 2
+		if damage < 1000:
+			damage *= 2
+			if damage > 1000:
+				damage = 1000
 func rotateTowards() -> void:
 	rotate(atan2(direction.y, direction.x)-rotation);

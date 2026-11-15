@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://5esjwkfh1i8y"]
+[gd_scene load_steps=4 format=3 uid="uid://5esjwkfh1i8y"]
 
 [ext_resource type="Script" uid="uid://svahh4dl5eie" path="res://test.gd" id="2_2b2rl"]
 [ext_resource type="Texture2D" uid="uid://btm7r3onscpwv" path="res://bullet.png" id="2_v8qja"]
@@ -6,15 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
 size = Vector2(25.4128, 7.13922)
 
-[node name="_Node2D_11" type="Node2D" unique_id=383221431]
+[node name="_Node2D_11" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=68168844]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_2b2rl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1098513309]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_2b2rl")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1710612631]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-2, 0)
 scale = Vector2(0.460933, 0.472305)
 texture = ExtResource("2_v8qja")
