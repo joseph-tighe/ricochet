@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcgvioxq6mx0r"]
+[gd_scene load_steps=9 format=3 uid="uid://bcgvioxq6mx0r"]
 
 [ext_resource type="Script" uid="uid://dcnoxmpruwlrk" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_qi2p4"]
@@ -11,38 +11,38 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(46.2624, 49.8736)
 
-[node name="Node2D" type="Node2D" unique_id=917252647]
+[node name="Node2D" type="Node2D"]
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1671039576 groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
 script = ExtResource("1_4gyqm")
 Bullet = ExtResource("2_qi2p4")
 
-[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy" unique_id=251170956]
+[node name="EnemyCollision" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(-1.6567, -1)
 scale = Vector2(0.879474, 0.791356)
 shape = SubResource("RectangleShape2D_4gyqm")
 
-[node name="EnemyMarker" type="Marker2D" parent="Enemy" unique_id=929850868]
+[node name="EnemyMarker" type="Marker2D" parent="Enemy"]
 
-[node name="CooldownTimer" type="Timer" parent="Enemy" unique_id=1148413964]
+[node name="CooldownTimer" type="Timer" parent="Enemy"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2093368997]
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 scale = Vector2(0.58544, 0.58544)
 texture = ExtResource("3_iifgy")
 
-[node name="Cannon" type="Sprite2D" parent="Enemy" unique_id=2141433504]
+[node name="Cannon" type="Sprite2D" parent="Enemy"]
 scale = Vector2(0.554547, 0.554547)
 texture = ExtResource("4_epg4t")
 
-[node name="HealthBar" type="Node2D" parent="Enemy" unique_id=1201296885]
+[node name="HealthBar" type="Node2D" parent="Enemy"]
 position = Vector2(0, -40)
 script = ExtResource("5_health_bar")
 
-[node name="shootSound" type="AudioStreamPlayer2D" parent="Enemy" unique_id=402501579]
+[node name="shootSound" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("6_3yqyl")
 volume_db = 24.0
 
-[node name="hit" type="AudioStreamPlayer2D" parent="Enemy" unique_id=717373917]
+[node name="hit" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("7_wujgv")
 volume_db = -12.0
 max_distance = 4096.0
