@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ccgsa4nkswjt8"]
+[gd_scene format=3 uid="uid://ccgsa4nkswjt8"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c5al3h4br2r2t" path="res://assets/craftpix-net-942642-free-urban-shooter-top-down-pixel-art-mini-game-kit/Characters/Character_3/Shot.png" id="5_b26j0"]
 [ext_resource type="Texture2D" uid="uid://cciwwo5fsqmjk" path="res://assets/craftpix-net-942642-free-urban-shooter-top-down-pixel-art-mini-game-kit/Characters/Character_3/Walk+Shot.png" id="6_n7ghd"]
 [ext_resource type="Script" uid="uid://cnifwgwjt7jgf" path="res://cameraPositioning.gd" id="7_camera"]
+[ext_resource type="AudioStream" uid="uid://cdtddvsbi3xur" path="res://assets/music/audiomass-output.mp3" id="8_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://jer1i8csgnug" path="res://assets/music/audiomass-output(3).mp3" id="9_nvl01"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("3_sweqy")
@@ -89,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b26j0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -106,7 +108,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_bwjto")
 }],
-"loop": true,
+"loop": 1,
 "name": &"running",
 "speed": 5.0
 }, {
@@ -123,7 +125,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_q13i1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"shooting",
 "speed": 5.0
 }, {
@@ -140,7 +142,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_7ahtn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"shooting+running",
 "speed": 5.0
 }]
@@ -168,13 +170,13 @@ properties/5/path = NodePath("CharacterBody2D:username")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" unique_id=457679669]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=527651690 groups=["player"]]
 script = ExtResource("1_i3pqv")
 Bullet = ExtResource("2_hqtel")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1898242261]
 texture_filter = 1
 position = Vector2(1, -25)
 scale = Vector2(3.71875, 3.71875)
@@ -182,12 +184,12 @@ sprite_frames = SubResource("SpriteFrames_xq0jv")
 animation = &"running"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=661982558]
 shape = SubResource("RectangleShape2D_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=2123286246]
 
-[node name="NameLabel" type="Label" parent="CharacterBody2D"]
+[node name="NameLabel" type="Label" parent="CharacterBody2D" unique_id=1832331626]
 offset_left = -90.0
 offset_top = -145.0
 offset_right = 90.0
@@ -195,18 +197,25 @@ offset_bottom = -115.0
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(3, 0)
 script = ExtResource("7_camera")
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=300199948]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="shootSound" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1797269128]
+stream = ExtResource("8_n7ghd")
+volume_db = 24.0
+
+[node name="hit" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1943009606]
+stream = ExtResource("9_nvl01")
+volume_db = 24.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1166321018]
 script = ExtResource("4_sweqy")
 bar = ExtResource("5_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="Node2D"]
+[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=388928778]
 position = Vector2(5, -84)
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1117932413]
 replication_config = SubResource("SceneReplicationConfig_dw050")
