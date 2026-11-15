@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var speed := 3000.0
 @export var direction := Vector2.RIGHT
+@export var dmgLimit = 30
 var damage = 1
 
 func _physics_process(delta: float) -> void:
@@ -17,9 +18,9 @@ func _physics_process(delta: float) -> void:
 			collider.health -= damage
 			queue_free()
 		direction = direction.bounce(collision.get_normal()).normalized()
-		if damage < 1000:
+		if damage < dmgLimit:
 			damage *= 2
-			if damage > 1000:
-				damage = 1000
+			if damage > dmgLimit:
+				damage = dmgLimit
 func rotateTowards() -> void:
 	rotate(atan2(direction.y, direction.x)-rotation);
