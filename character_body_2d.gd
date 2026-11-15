@@ -19,10 +19,10 @@ func _physics_process(delta: float) -> void:
 		direction.y += 1
 	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
 		direction.x -= 1
-		isLeft = true
 	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
 		direction.x += 1
-		isLeft = false
+	
+	isLeft = (get_global_mouse_position()-$Marker2D.global_position).x < 0
 	$AnimatedSprite2D.flip_h = isLeft
 	if Input.is_action_pressed("shoot") and can_shoot:
 		can_shoot = false

@@ -154,12 +154,12 @@ script = ExtResource("1_i3pqv")
 Bullet = ExtResource("2_hqtel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
 position = Vector2(1, -25)
 scale = Vector2(3.71875, 3.71875)
 sprite_frames = SubResource("SpriteFrames_xq0jv")
 animation = &"running"
 autoplay = "idle"
-frame_progress = 0.511531
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_2hs0m")
