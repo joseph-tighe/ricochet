@@ -13,17 +13,16 @@ func _physics_process(_delta: float) -> void:
 	if health <= 0:
 		queue_free()
 		return
+	var player := get_tree().get_first_node_in_group("player") as Node2D
+	var origin: Vector2 = $EnemyMarker.global_position
+	var dir_vect: Vector2 = player.global_position - origin
+	$Cannon.rotate(atan2(dir_vect.y, dir_vect.x)-$Cannon.rotation);
 
 	if not can_shoot:
 		return
 
-	var player := get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
-
-	var origin: Vector2 = $EnemyMarker.global_position
-	var dir_vect: Vector2 = player.global_position - origin
-
 	if dir_vect.length() > sight:
 		return
 
