@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cry4po262qvgu"]
+[gd_scene format=3 uid="uid://cry4po262qvgu"]
 
 [ext_resource type="Script" path="res://splash_text.gd" id="1_n0s04"]
 
