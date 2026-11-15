@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bumoue3uyhlax"]
 
+[ext_resource type="Script" uid="uid://dba1inn4olc14" path="res://lvl_select.gd" id="1_45un4"]
 [ext_resource type="Texture2D" uid="uid://cs3ll40wnl58b" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Levels.png" id="1_rve1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yoxnr"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_45un4")
 
 [node name="colorbackground" type="ColorRect" parent="." unique_id=1361249091]
 layout_mode = 1
@@ -101,7 +103,7 @@ offset_right = 464.0
 offset_bottom = 350.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1576723713]
+[node name="lvl1" type="TextureButton" parent="." unique_id=1576723713]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.106000006
@@ -115,7 +117,7 @@ texture_pressed = SubResource("AtlasTexture_fp6pr")
 texture_hover = SubResource("AtlasTexture_c55je")
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=1836834926]
+[node name="lvl2" type="TextureButton" parent="." unique_id=1836834926]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.106000006
@@ -129,7 +131,7 @@ texture_pressed = SubResource("AtlasTexture_fp6pr")
 texture_hover = SubResource("AtlasTexture_c55je")
 stretch_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="." unique_id=1948683172]
+[node name="lvl3" type="TextureButton" parent="." unique_id=1948683172]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.106000006
