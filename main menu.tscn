@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvbpsre7fqsqw"]
+[gd_scene format=3 uid="uid://bvbpsre7fqsqw"]
 
 [ext_resource type="Texture2D" uid="uid://bf5kjoqktnudq" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Main_menu.png" id="1_7mewq"]
 [ext_resource type="Script" uid="uid://d1tjs6clkjvey" path="res://main_menu.gd" id="1_iv0vr"]
@@ -54,7 +54,7 @@ region = Rect2(173, 418, 56, 12)
 atlas = ExtResource("3_f0j1r")
 region = Rect2(253, 419, 56, 11)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=2006094976]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iv0vr")
 
-[node name="colorbackground" type="ColorRect" parent="."]
+[node name="colorbackground" type="ColorRect" parent="." unique_id=904222944]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -74,7 +74,7 @@ mouse_filter = 2
 color = Color(0.656971, 0.402761, 0.250234, 1)
 metadata/_edit_lock_ = true
 
-[node name="background" type="TextureRect" parent="."]
+[node name="background" type="TextureRect" parent="." unique_id=574804448]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
@@ -87,7 +87,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="titlebackground" type="TextureRect" parent="."]
+[node name="titlebackground" type="TextureRect" parent="." unique_id=1963712468]
 layout_mode = 0
 offset_left = 475.0
 offset_top = 63.0
@@ -98,7 +98,7 @@ texture = SubResource("AtlasTexture_3bjpr")
 expand_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="title" type="Label" parent="."]
+[node name="title" type="Label" parent="." unique_id=275260397]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 63.0
@@ -110,7 +110,7 @@ horizontal_alignment = 1
 justification_flags = 162
 metadata/_edit_lock_ = true
 
-[node name="level" type="TextureButton" parent="."]
+[node name="level" type="TextureButton" parent="." unique_id=150169894]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 165.0
@@ -122,7 +122,7 @@ texture_pressed = SubResource("AtlasTexture_c55je")
 texture_hover = SubResource("AtlasTexture_ih3fs")
 stretch_mode = 0
 
-[node name="Multiplayer" type="TextureButton" parent="."]
+[node name="Multiplayer" type="TextureButton" parent="." unique_id=238173580]
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
@@ -136,7 +136,7 @@ texture_pressed = SubResource("AtlasTexture_5d0og")
 texture_hover = SubResource("AtlasTexture_mw7qi")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Multiplayer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Multiplayer" unique_id=1654281036]
 layout_mode = 0
 offset_left = -331.0
 offset_top = 13.0
@@ -150,7 +150,7 @@ bbcode_enabled = true
 text = "[b]MULTIPLAYER[/b]"
 horizontal_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Quit" type="TextureButton" parent="." unique_id=1592996341]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 355.0
@@ -161,6 +161,7 @@ texture_pressed = SubResource("AtlasTexture_nfpy3")
 texture_hover = SubResource("AtlasTexture_2oq62")
 stretch_mode = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=448304679]
 stream = ExtResource("4_qqwyt")
+volume_db = 8.82
 autoplay = true
