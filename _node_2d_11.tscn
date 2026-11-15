@@ -1,5 +1,5 @@
-[gd_scene format=3 uid="uid://bssl44ief2dtb"]
+[gd_scene load_steps=2 format=3 uid="uid://dmemp3g0gt0m0"]
 
-[ext_resource type="PackedScene" path="res://bullet.tscn" id="1_grycv"]
+[ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="1_grycv"]
 
-[node name="_Node2D_11" unique_id=1861664223 instance=ExtResource("1_grycv")]
+[node name="_Node2D_11" instance=ExtResource("1_grycv")]

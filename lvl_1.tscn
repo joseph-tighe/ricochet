@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dolidih4wv8d2" path="res://enemy_spawner.gd" id="1_jschv"]
 [ext_resource type="PackedScene" uid="uid://bcgvioxq6mx0r" path="res://enemy.tscn" id="2_okdh5"]
 [ext_resource type="PackedScene" uid="uid://ccgsa4nkswjt8" path="res://player.tscn" id="4_okdh5"]
-[ext_resource type="Script" uid="uid://cnifwgwjt7jgf" path="res://cameraPositioning.gd" id="5_clg6b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c55je"]
 
