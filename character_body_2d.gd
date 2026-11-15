@@ -28,6 +28,15 @@ func _physics_process(delta: float) -> void:
 		can_shoot = false
 		cooldown_timer.start(0.2) # Cooldown in seconds
 		shoot()
+		if direction == Vector2.ZERO:
+			$AnimatedSprite2D.animation = "shooting"
+		else:
+			$AnimatedSprite2D.animation = "shooting+running"
+	elif can_shoot:
+		if direction == Vector2.ZERO:
+			$AnimatedSprite2D.animation = "idle"
+		else:
+			$AnimatedSprite2D.animation = "running"
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
 
