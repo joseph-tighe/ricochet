@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ccgsa4nkswjt8"]
+[gd_scene load_steps=31 format=3 uid="uid://ccgsa4nkswjt8"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b26j0")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -108,7 +108,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_bwjto")
 }],
-"loop": 1,
+"loop": true,
 "name": &"running",
 "speed": 5.0
 }, {
@@ -125,7 +125,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_q13i1")
 }],
-"loop": 1,
+"loop": true,
 "name": &"shooting",
 "speed": 5.0
 }, {
@@ -142,7 +142,7 @@ animations = [{
 "duration": 0.25,
 "texture": SubResource("AtlasTexture_7ahtn")
 }],
-"loop": 1,
+"loop": true,
 "name": &"shooting+running",
 "speed": 5.0
 }]
@@ -170,13 +170,13 @@ properties/5/path = NodePath("CharacterBody2D:username")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
-[node name="Player" type="Node2D" unique_id=457679669]
+[node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=527651690 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_i3pqv")
 Bullet = ExtResource("2_hqtel")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1898242261]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(1, -25)
 scale = Vector2(3.71875, 3.71875)
@@ -184,38 +184,37 @@ sprite_frames = SubResource("SpriteFrames_xq0jv")
 animation = &"running"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=661982558]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=2123286246]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 
-[node name="NameLabel" type="Label" parent="CharacterBody2D" unique_id=1832331626]
-offset_left = -90.0
-offset_top = -145.0
-offset_right = 90.0
-offset_bottom = -115.0
+[node name="NameLabel" type="Label" parent="CharacterBody2D"]
+offset_left = 3.0
+offset_right = 183.0
+offset_bottom = 30.0
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
-position = Vector2(3, 0)
-script = ExtResource("7_camera")
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
 
-[node name="CooldownTimer" type="Timer" parent="CharacterBody2D" unique_id=300199948]
-
-[node name="shootSound" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1797269128]
+[node name="shootSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("8_n7ghd")
 volume_db = 24.0
 
-[node name="hit" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1943009606]
+[node name="hit" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("9_nvl01")
 volume_db = 24.0
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1166321018]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+script = ExtResource("7_camera")
+
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("4_sweqy")
 bar = ExtResource("5_2hs0m")
 
-[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=388928778]
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(5, -84)
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1117932413]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_dw050")
