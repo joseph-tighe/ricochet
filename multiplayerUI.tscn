@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://jnwi50y7j6x7"]
+
+[ext_resource type="Script" uid="uid://cwcdqnvm2lete" path="res://multiplayer_ui.gd" id="1_hud"]
+
+[node name="RoomHud" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Info" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 640.0
+offset_bottom = 40.0
+
+[node name="Leave" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Leave Room"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccgsa4nkswjt8"]
+[gd_scene load_steps=28 format=3 uid="uid://ccgsa4nkswjt8"]
 
 [ext_resource type="Script" uid="uid://ybmqsyq5qadj" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://5esjwkfh1i8y" path="res://bullet.tscn" id="2_hqtel"]
@@ -147,6 +147,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(52, 73)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dw050"]
+properties/0/path = NodePath("CharacterBody2D:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("CharacterBody2D:velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("CharacterBody2D:health")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("CharacterBody2D/AnimatedSprite2D:animation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("CharacterBody2D/AnimatedSprite2D:flip_h")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("CharacterBody2D:username")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
@@ -166,6 +186,14 @@ shape = SubResource("RectangleShape2D_2hs0m")
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 
+[node name="NameLabel" type="Label" parent="CharacterBody2D"]
+offset_left = -90.0
+offset_top = -145.0
+offset_right = 90.0
+offset_bottom = -115.0
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
 [node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -174,3 +202,6 @@ bar = ExtResource("5_2hs0m")
 
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(5, -84)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_dw050")

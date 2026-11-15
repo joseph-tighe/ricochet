@@ -9,4 +9,8 @@ func _physics_process(delta: float) -> void:
 
 func spawn() -> void:
 	var ui = bar.instantiate()
+	# The HUD follows the player that owns this node.
+	var body := get_parent().get_node_or_null("CharacterBody2D")
+	if body != null and ui.has_node("HealthFill"):
+		ui.get_node("HealthFill").player = body
 	get_tree().current_scene.add_child.call_deferred(ui)
