@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://5esjwkfh1i8y"]
+[gd_scene format=3 uid="uid://5esjwkfh1i8y"]
 
 [ext_resource type="Script" uid="uid://svahh4dl5eie" path="res://test.gd" id="2_2b2rl"]
 [ext_resource type="Texture2D" uid="uid://btm7r3onscpwv" path="res://bullet.png" id="2_v8qja"]
+[ext_resource type="AudioStream" uid="uid://bryo4m7n4evrv" path="res://assets/music/audiomass-output(1).mp3" id="3_t4vbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
 size = Vector2(25.4128, 7.13922)
 
-[node name="_Node2D_11" type="Node2D"]
+[node name="_Node2D_11" type="Node2D" unique_id=1752202170]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2065408925]
 script = ExtResource("2_2b2rl")
+speed = null
+direction = null
+dmgLimit = null
+lifetime = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2113629258]
 shape = SubResource("RectangleShape2D_2b2rl")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1804691627]
 position = Vector2(-2, 0)
 scale = Vector2(0.460933, 0.472305)
 texture = ExtResource("2_v8qja")
+
+[node name="ricochetSFX" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=420782836]
+stream = ExtResource("3_t4vbm")
+volume_db = 14.0
+max_distance = 1000.0

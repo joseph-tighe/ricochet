@@ -1,7 +1,11 @@
 extends CharacterBody2D
 @export var Bullet : PackedScene
+@onready var shootSFX : AudioStreamPlayer2D = $shootSound
+@onready var hitSFX : AudioStreamPlayer2D = $hit
 
 @onready var cooldown_timer: Timer = $CooldownTimer
+var prevHealth = 0
+var localHealth = 0
 var can_shoot := true
 @export var health = 10
 @export var sight = 1000
@@ -10,6 +14,10 @@ func _ready() -> void:
 	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
 
 func _physics_process(_delta: float) -> void:
+	prevHealth = localHealth
+	localHealth = health
+	if prevHealth - localHealth > 0:
+		hitSFX.play()
 	if health <= 0:
 		queue_free()
 		return
@@ -39,6 +47,8 @@ func _physics_process(_delta: float) -> void:
 
 	can_shoot = false
 	cooldown_timer.start(0.3)
+	shootSFX.volume_db = randf_range(12.0,24.0)
+	shootSFX.play();
 	shoot(dir_vect)
 
 

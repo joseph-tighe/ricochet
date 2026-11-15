@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 @export var speed := 3000.0
 @export var direction := Vector2.RIGHT
-@export var dmgLimit = 1025
+@export var dmgLimit : int = 1025
 @export var lifetime := 6.0
+@onready var ricochetSFX : AudioStreamPlayer2D = $ricochetSFX
 var damage = 1
 
 func _physics_process(delta: float) -> void:
@@ -18,6 +19,7 @@ func _physics_process(delta: float) -> void:
 	rotateTowards()
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
+		ricochetSFX.play()
 		var collider = collision.get_collider()
 		if collider.is_in_group("player"):
 			_apply_player_damage(collider)
@@ -25,6 +27,7 @@ func _physics_process(delta: float) -> void:
 			return
 		elif collider.is_in_group("enemy"):
 			# In multiplayer the server owns enemy state.
+			
 			if not multiplayer.has_multiplayer_peer() or multiplayer.is_server():
 				collider.health -= damage
 			queue_free()
