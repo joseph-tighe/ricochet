@@ -1,5 +1,7 @@
 extends CharacterBody2D
 @export var Bullet : PackedScene
+@onready var shootSFX : AudioStreamPlayer2D = $shootSound
+@onready var hitSFX : AudioStreamPlayer2D = $hit
 
 const SPEED = 300.0
 @onready var cooldown_timer: Timer = $CooldownTimer
@@ -32,6 +34,12 @@ func _draw() -> void:
 		for i in range(10):
 			draw_circle(segment[0].lerp(segment[1], i/10.0), 3, Color.WHITE)
 func _physics_process(delta: float) -> void:
+	if health < 0:
+		get_tree().change_scene_to_file("res://deathscreen.tscn")
+		return;
+	elif get_tree().get_nodes_in_group("enemy").is_empty():
+		get_tree().change_scene_to_file("res://winscreen.tscn")
+		return;
 	var bulletDir = (get_global_mouse_position()-$Marker2D.global_position).normalized()
 	segments = []
 	var start = $Marker2D.global_position
@@ -96,6 +104,8 @@ func _on_cooldown_timer_timeout() -> void:
 # is forwarded here by the server (see test.gd). Any other sender is ignored.
 @rpc("any_peer", "call_remote", "reliable")
 func take_damage(amount: int) -> void:
+	hitSFX.volume_db = randf_range(12.0, 24.0)
+	hitSFX.play()
 	# get_remote_sender_id() is 0 for direct calls, so only RPC calls are filtered.
 	var sender := multiplayer.get_remote_sender_id()
 	if sender != 0:
@@ -117,8 +127,12 @@ func shoot():
 	var aim = (get_global_mouse_position() - $Marker2D.global_position).normalized()
 	var spawn_position = $Marker2D.global_position + 70.0 * aim
 	if multiplayer.has_multiplayer_peer():
+		shootSFX.volume_db = randf_range(12.0,24.0)
+		shootSFX.play();
 		spawn_bullet.rpc(spawn_position, aim)
 	else:
+		shootSFX.volume_db = randf_range(12.0,24.0)
+		shootSFX.play();
 		spawn_bullet(spawn_position, aim)
 
 # Runs on every peer so everyone sees the same bullet.

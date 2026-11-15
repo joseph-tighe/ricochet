@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bumoue3uyhlax"]
+[gd_scene load_steps=8 format=3 uid="uid://bumoue3uyhlax"]
 
 [ext_resource type="Script" uid="uid://dba1inn4olc14" path="res://lvl_select.gd" id="1_45un4"]
 [ext_resource type="Texture2D" uid="uid://cs3ll40wnl58b" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Levels.png" id="1_rve1e"]
@@ -23,7 +23,7 @@ region = Rect2(56, 162, 17, 19)
 atlas = ExtResource("1_rve1e")
 region = Rect2(264, 162, 17, 26)
 
-[node name="Control" type="Control" unique_id=22760342]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,22 +32,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_45un4")
 
-[node name="colorbackground" type="ColorRect" parent="." unique_id=1361249091]
+[node name="colorbackground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.98300004
+anchor_bottom = 0.983
 offset_right = 14.0
-offset_bottom = 0.015991211
-color = Color(0.6569714, 0.4027607, 0.25023437, 1)
+offset_bottom = 0.0159912
+color = Color(0.656971, 0.402761, 0.250234, 1)
 metadata/_edit_lock_ = true
 
-[node name="locks" type="Control" parent="." unique_id=1988218717]
+[node name="locks" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="locks" unique_id=2031977494]
+[node name="TextureRect" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_right = 1155.0
 offset_bottom = 642.0
@@ -55,7 +55,7 @@ texture = SubResource("AtlasTexture_yoxnr")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="locks" unique_id=1252602292]
+[node name="TextureRect4" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 383.0
 offset_top = 411.0
@@ -63,7 +63,7 @@ offset_right = 470.0
 offset_bottom = 502.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureRect7" type="TextureRect" parent="locks" unique_id=1033580256]
+[node name="TextureRect7" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 690.0
 offset_top = 407.0
@@ -71,7 +71,7 @@ offset_right = 777.0
 offset_bottom = 498.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureRect6" type="TextureRect" parent="locks" unique_id=660706457]
+[node name="TextureRect6" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 692.0
 offset_top = 259.0
@@ -79,7 +79,7 @@ offset_right = 779.0
 offset_bottom = 350.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureRect5" type="TextureRect" parent="locks" unique_id=32723388]
+[node name="TextureRect5" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 533.0
 offset_top = 409.0
@@ -87,7 +87,7 @@ offset_right = 620.0
 offset_bottom = 500.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureRect3" type="TextureRect" parent="locks" unique_id=429364590]
+[node name="TextureRect3" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 259.0
@@ -95,7 +95,7 @@ offset_right = 627.0
 offset_bottom = 350.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="TextureRect2" type="TextureRect" parent="locks" unique_id=1090745136]
+[node name="TextureRect2" type="TextureRect" parent="locks"]
 layout_mode = 0
 offset_left = 377.0
 offset_top = 259.0
@@ -103,11 +103,11 @@ offset_right = 464.0
 offset_bottom = 350.0
 texture = SubResource("AtlasTexture_c5mru")
 
-[node name="lvl1" type="TextureButton" parent="." unique_id=1576723713]
+[node name="lvl1" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.106000006
-anchor_bottom = 0.062000003
+anchor_right = 0.106
+anchor_bottom = 0.062
 offset_left = 379.0
 offset_top = 105.0
 offset_right = 343.888
@@ -117,11 +117,11 @@ texture_pressed = SubResource("AtlasTexture_fp6pr")
 texture_hover = SubResource("AtlasTexture_c55je")
 stretch_mode = 0
 
-[node name="lvl2" type="TextureButton" parent="." unique_id=1836834926]
+[node name="lvl2" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.106000006
-anchor_bottom = 0.062000003
+anchor_right = 0.106
+anchor_bottom = 0.062
 offset_left = 535.0
 offset_top = 99.0
 offset_right = 499.888
@@ -131,11 +131,11 @@ texture_pressed = SubResource("AtlasTexture_fp6pr")
 texture_hover = SubResource("AtlasTexture_c55je")
 stretch_mode = 0
 
-[node name="lvl3" type="TextureButton" parent="." unique_id=1948683172]
+[node name="lvl3" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.106000006
-anchor_bottom = 0.062000003
+anchor_right = 0.106
+anchor_bottom = 0.062
 offset_left = 691.0
 offset_top = 101.0
 offset_right = 655.888

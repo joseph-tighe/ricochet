@@ -11,11 +11,11 @@ func _ready() -> void:
 
 func _on_l1_pressed() -> void:
 	lvl1_button.disabled = true
-	get_tree().change_scene_to_file("res://lvl_1.tscn")
+	get_tree().change_scene_to_file("res://lvl_t.tscn")
 
 func _on_l2_pressed() -> void:
 	lvl2_button.disabled = true
-	get_tree().change_scene_to_file("res://lvl_2.tscn")
+	get_tree().change_scene_to_file("res://lvl_1.tscn")
 	
 func _on_l3_pressed() -> void:
 	lvl3_button.disabled = true
