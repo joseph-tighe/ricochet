@@ -22,9 +22,14 @@ func _ready() -> void:
 					room_ip = connected_ip
 
 	var role := "Host" if MultiplayerHandler.is_host else "Client"
-	$Info.text = "Player: %s   |   %s   |   Room: %s:%d" % [
-		MultiplayerHandler.username, role, room_ip, port
-	]
+	if MultiplayerHandler.is_host:
+		$Info.text = "Player: %s   |   %s   |   Join at %s" % [
+			MultiplayerHandler.username, role, MultiplayerHandler.get_join_hint(port)
+		]
+	else:
+		$Info.text = "Player: %s   |   %s   |   Room: %s:%d" % [
+			MultiplayerHandler.username, role, room_ip, port
+		]
 	$Leave.pressed.connect(_on_leave_pressed)
 	MultiplayerHandler.server_disconnected.connect(_on_server_disconnected)
 

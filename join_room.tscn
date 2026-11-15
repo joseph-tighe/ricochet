@@ -61,7 +61,7 @@ placeholder_text = "127.0.0.1"
 
 [node name="AddressHint" type="Label" parent="Center/VBox"]
 layout_mode = 2
-text = "Both computers must be on the same network. 127.0.0.1 only works on the host's own computer."
+text = "Use what the host's screen shows: their computer name (e.g. MY-PC) or their IP (e.g. 192.168.1.42). 127.0.0.1 only works on the host's own computer."
 autowrap_mode = 3
 
 [node name="PortLabel" type="Label" parent="Center/VBox"]

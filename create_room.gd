@@ -19,9 +19,10 @@ func _ready() -> void:
 	_refresh_ip_hint()
 
 func _refresh_ip_hint() -> void:
-	local_ip_label.text = "Other computers join with: %s  (port %s)" % [
-		MultiplayerHandler.get_local_ip(), port_field.text.strip_edges()
-	]
+	var port := port_field.text.strip_edges().to_int()
+	if port <= 0:
+		port = MultiplayerHandler.DEFAULT_PORT
+	local_ip_label.text = "Other computers join with: %s" % MultiplayerHandler.get_join_hint(port)
 
 func _on_port_changed(_text: String) -> void:
 	_refresh_ip_hint()
