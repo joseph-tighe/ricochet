@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkxhtr4fxlvuj"]
+[gd_scene format=3 uid="uid://dkxhtr4fxlvuj"]
 
 [ext_resource type="Script" uid="uid://cgodj0ld0wrla" path="res://join_room.gd" id="1_join"]
 
