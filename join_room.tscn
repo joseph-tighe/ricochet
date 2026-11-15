@@ -1,6 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5iojywq3i6ft"]
 
-
 [ext_resource type="Script" uid="uid://cgodj0ld0wrla" path="res://join_room.gd" id="1_join"]
 
 [node name="JoinRoom" type="Control"]

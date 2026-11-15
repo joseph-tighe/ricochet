@@ -5,6 +5,8 @@ extends Camera2D
 
 # The camera sits on the player it should follow. Cameras placed directly in a
 # level instead fall back to the first player in the scene.
+func _ready() -> void:
+	zoom = Vector2(0.5, 0.5) 
 func _get_target() -> Node2D:
 	var parent := get_parent()
 	if parent is Node2D and parent.is_in_group("player"):
