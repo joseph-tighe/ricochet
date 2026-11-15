@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cgphw807fcuo7"]
 
+[ext_resource type="Script" uid="uid://dw8gyf4k01tdi" path="res://deathscreen.gd" id="1_0ajwu"]
 [ext_resource type="Texture2D" uid="uid://d32w1kiwne4uw" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Win_loose.png" id="1_5mq0c"]
 [ext_resource type="Texture2D" uid="uid://bjrn52160ixuk" path="res://assets/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons.png" id="2_0ajwu"]
 
@@ -9,15 +10,15 @@ region = Rect2(347, 203, 90, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yoxnr"]
 atlas = ExtResource("2_0ajwu")
-region = Rect2(93, 291, 56, 11)
+region = Rect2(93, 323, 56, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c5mru"]
 atlas = ExtResource("2_0ajwu")
-region = Rect2(173, 306, 56, 12)
+region = Rect2(173, 338, 56, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bjpr"]
 atlas = ExtResource("2_0ajwu")
-region = Rect2(253, 307, 56, 11)
+region = Rect2(253, 339, 56, 11)
 
 [node name="Control" type="Control" unique_id=143929087]
 layout_mode = 3
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0ajwu")
 
 [node name="colorbackground" type="ColorRect" parent="." unique_id=1058910527]
 layout_mode = 1

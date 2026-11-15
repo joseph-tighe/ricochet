@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @onready var cooldown_timer: Timer = $CooldownTimer
 var can_shoot := true
-@export var health = 40
+@export var health = 50
 var isLeft := true;
 
 func _ready() -> void:
