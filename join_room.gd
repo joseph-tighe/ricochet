@@ -8,6 +8,9 @@ extends Control
 @onready var create_button: Button = %CreateInstead
 @onready var back_button: Button = %BackButton
 
+var _connecting_since := -1
+var _slow_hint_shown := false
+
 func _ready() -> void:
 	join_button.pressed.connect(_on_join_pressed)
 	create_button.pressed.connect(_on_create_pressed)
@@ -15,6 +18,17 @@ func _ready() -> void:
 	MultiplayerHandler.connection_failed.connect(_on_connection_failed)
 	status_label.text = ""
 	username_field.grab_focus()
+
+func _process(_delta: float) -> void:
+	if _connecting_since < 0 or _slow_hint_shown:
+		return
+	if Time.get_ticks_msec() - _connecting_since > 10000:
+		_slow_hint_shown = true
+		var port := MultiplayerHandler.room_port
+		status_label.text = "Still connecting to %s:%d...\nCheck that:\n- the host has created the room (they are in game),\n- %s is the host's IP (127.0.0.1 only works on the host's own PC),\n- the host's Windows Firewall allows UDP %d. On the host, in an admin PowerShell:\n  New-NetFirewallRule -DisplayName \"Game UDP %d\" -Direction Inbound -Protocol UDP -LocalPort %d -Action Allow\n- both PCs are on the same Wi-Fi/network (guest networks block this)." % [
+			MultiplayerHandler.room_address, port, MultiplayerHandler.room_address,
+			port, port, port
+		]
 
 func _on_join_pressed() -> void:
 	var player_name := username_field.text.strip_edges()
@@ -38,11 +52,20 @@ func _on_join_pressed() -> void:
 		return
 
 	join_button.disabled = true
-	status_label.text = "Connecting to %s on port %d..." % [address, port]
+	_connecting_since = Time.get_ticks_msec()
+	_slow_hint_shown = false
+	var resolved := MultiplayerHandler.room_address
+	if resolved == address:
+		status_label.text = "Connecting to %s:%d..." % [resolved, port]
+	else:
+		status_label.text = "Connecting to %s:%d (%s)..." % [resolved, port, address]
 
 func _on_connection_failed() -> void:
+	_connecting_since = -1
 	join_button.disabled = false
-	_show_error("Could not reach the room. Check the address and port.")
+	_show_error("Could not reach %s:%d. Check the address, port and the host's firewall." % [
+		MultiplayerHandler.room_address, MultiplayerHandler.room_port
+	])
 
 func _on_create_pressed() -> void:
 	get_tree().change_scene_to_file("res://create_room.tscn")

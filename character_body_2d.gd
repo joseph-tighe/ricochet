@@ -26,8 +26,37 @@ func _update_name_label() -> void:
 	var label := get_node_or_null("NameLabel")
 	if label != null:
 		label.text = username
+var segments = []
 
+func _draw() -> void:
+	for segment in segments:
+		#draw_line(segment[0], segment[1], Color.WHITE, 2)
+		for i in range(10):
+			draw_circle(segment[0].lerp(segment[1], i/10.0), 3, Color.WHITE)
 func _physics_process(delta: float) -> void:
+	var bulletDir = (get_global_mouse_position()-$Marker2D.global_position).normalized()
+	segments = []
+	var start = $Marker2D.global_position
+	var shootDir = bulletDir
+	var prevStart;
+	for i in range(5):
+		prevStart = start
+		var query := PhysicsRayQueryParameters2D.create(
+			start,
+			start+shootDir*1200
+		)
+		query.exclude = [get_rid()]
+		
+		var hit := get_world_2d().direct_space_state.intersect_ray(query)
+		if hit.is_empty():
+			segments.append([to_local(start), to_local(start+shootDir*1200)]);
+			break
+		start = hit.position
+		shootDir = shootDir.bounce(hit.normal).normalized()
+		start += hit.normal
+		segments.append([to_local(prevStart), to_local(start)]);
+	queue_redraw()
+	
 	# Only the peer that owns this player should process input/movement.
 	# Remote peers receive state through the MultiplayerSynchronizer.
 	if not is_multiplayer_authority():
@@ -43,8 +72,8 @@ func _physics_process(delta: float) -> void:
 		direction.x -= 1
 	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
 		direction.x += 1
-
-	isLeft = (get_global_mouse_position()-$Marker2D.global_position).x < 0
+	
+	isLeft = (bulletDir).x < 0
 	$AnimatedSprite2D.flip_h = isLeft
 	if Input.is_action_pressed("shoot") and can_shoot:
 		can_shoot = false

@@ -39,6 +39,13 @@ theme_override_font_sizes/font_size = 30
 text = "Create Room"
 horizontal_alignment = 1
 
+[node name="LocalIp" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+horizontal_alignment = 1
+text = ""
+
 [node name="UsernameLabel" type="Label" parent="Center/VBox"]
 layout_mode = 2
 text = "Username"
